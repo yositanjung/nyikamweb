@@ -20,17 +20,17 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($tampil as $tampil2) { ?>
+                <?php foreach ($tampil as $d) { ?>
                     <tr>
-                    <td><?php echo $tampil2->id_barang;?></td>
-                    <td><?php echo $tampil2->jenis_barang;?></td>
-                    <td><?php echo $tampil2->nama_barang;?></td>
-                    <td><?php echo $tampil2->deskripsi_barang;?></td>
-                    <td><?php echo $tampil2->jumlah_barang;?></td>
-                    <td><?php echo $tampil2->harga_sewa;?></td>
+                    <td><?php echo $d->id_barang ?></td>
+                    <td><?php echo $d->jenis_barang ?></td>
+                    <td><?php echo $d->nama_barang ?></td>
+                    <td><?php echo $d->deskripsi_barang ?></td>
+                    <td><?php echo $d->jumlah_barang ?></td>
+                    <td><?php echo $d->harga_sewa ?></td>
                     <td align="center">
-                        <a href = "#">Edit</a> ||
-                        <a href = "#">Delete</a>
+                        <?php echo anchor ('crud/do_edit/' .$d->nama_barang, 'Edit'); ?> ||
+                        <?php echo anchor ('crud/do_delete/' .$d->nama_barang, 'Delete'); ?>
                     </td>
                 </tr>
                 <?php } ?>

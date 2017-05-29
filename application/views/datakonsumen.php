@@ -1,4 +1,4 @@
-<div class="col_1">
+<div class="panel panel-primary" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
     <div class="panel-heading">
         <h2>Data Konsumen</h2>
         <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}">
@@ -10,6 +10,7 @@
         <table class="table table-striped">
             <thead>
                 <tr class="warning">
+                    <th>Id Konsumen</th>
                     <th>Nama</th>
                     <th>No. Telepon</th>
                     <th>Alamat</th>
@@ -18,12 +19,16 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($konsumen as $k) { ?>
                 <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td><?php echo $k->id_konsumen ?></td>
+                    <td><?php echo $k->nama_konsumen ?></td>
+                    <td><?php echo $k->telp_konsumen ?></td>
+                    <td><?php echo $k->alamat_konsumen ?></td>
+                    <td><?php echo $k->email_konsumen ?></td>
+                    <td><?php echo $k->barang_konsumen ?></td>
                 </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>

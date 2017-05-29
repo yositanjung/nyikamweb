@@ -59,7 +59,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 /*library database untuk memanggil database sehingga tidak menggunakan query untuk memanggil*/
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database' , 'session');
 
 /*
 | -------------------------------------------------------------------

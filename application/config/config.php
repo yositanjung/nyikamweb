@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 /*url default dari index aplikasi*/
-$config['base_url'] = 'http://localhost/AdminPage/';
+$config['base_url'] = 'http://localhost/nyikamweb/';
 
 /*
 |--------------------------------------------------------------------------
@@ -325,7 +325,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'nyilehkamera';
 
 /*
 |--------------------------------------------------------------------------

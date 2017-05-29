@@ -1,43 +1,45 @@
 <div class="col_1">
     <div class="graphs">
         <div class="xs">
-            <h3>Upload Barang Baru</h3>
+            <h3>Edit Data Barang</h3>
             <div class="tab-content">
                 <div class="tab-pane active" id="horizontal-form">
-                    <form class="form-horizontal" method="POST" action="<?php echo base_url()."index.php/crud/do_insert" ?>"><!--data masuk ke controller uploadbarang-->
+                    <?php foreach ($barang as $b){ ?>
+                    <form class="form-horizontal" method="POST" action="<?php echo base_url(). 'crud/do_update'; ?>"><!--data masuk ke controller uploadbarang-->
                         <div class="form-group">
+                            <input type="hidden" value="<?php echo $b->id_barang; ?>" name="idb">
 									<label for="checkbox" class="col-sm-2 control-label">Jenis Barang</label>
 									<div class="col-sm-8">
-										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="DSLR"> DSLR</label>
+										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> DSLR</label>
                                         </div>
-										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="Action Camera"> Action Camera</label>
+										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> Action Camera</label>
                                         </div>
-                                        <div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="Other"> Other</label>
+                                        <div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> Other</label>
                                         </div>
 									</div>
 								</div>
                         <div class="form-group">
                             <label for="focusedinput" class="col-sm-2 control-label" >Nama Barang</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control1" name="nama_barang" placeholder="Nama Barang">
+                                <input type="text" class="form-control1" name="nama_barang" value="<?php echo $b->nama_barang; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="txtarea1" class="col-sm-2 control-label">Deskripsi Barang</label>
                             <div class="col-sm-8">
-                                <textarea name="deskripsi_barang" cols="50" rows="4" class="form-control1"></textarea>
+                                <textarea name="deskripsi_barang" cols="50" rows="4" class="form-control1" value="<?php echo $b->deskripsi_barang; ?>"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="focusedinput" class="col-sm-2 control-label">Jumlah Barang</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control1" name="jumlah_barang" placeholder="Jumlah Barang">
+                                <input type="text" class="form-control1" name="jumlah_barang" value="<?php echo $b->jumlah_barang; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="focusedinput" class="col-sm-2 control-label">Harga Sewa</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control1" name="harga_sewa" placeholder="Harga Sewa">
+                                <input type="text" class="form-control1" name="harga_sewa" value="<?php echo $b->harga_sewa; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -56,6 +58,7 @@
                             </div>
                         </div>
                     </form>
+                    <?php } ?>
                 </div>
             </div>
         </div>
