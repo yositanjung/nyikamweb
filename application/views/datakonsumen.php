@@ -11,11 +11,11 @@
             <thead>
                 <tr class="warning">
                     <th>Id Konsumen</th>
-                    <th>Nama</th>
+                    <th>Nama Konsumen</th>
                     <th>No. Telepon</th>
                     <th>Alamat</th>
                     <th>Email</th>
-                    <th>Data Barang</th>
+                    <th>Data Barang Pinjam</th>
                 </tr>
             </thead>
             <tbody>

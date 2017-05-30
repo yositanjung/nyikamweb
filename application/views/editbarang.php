@@ -8,13 +8,13 @@
                     <form class="form-horizontal" method="POST" action="<?php echo base_url(). 'crud/do_update'; ?>"><!--data masuk ke controller uploadbarang-->
                         <div class="form-group">
                             <input type="hidden" value="<?php echo $b->id_barang; ?>" name="idb">
-									<label for="checkbox" class="col-sm-2 control-label">Jenis Barang</label>
+									<label for="checkbox" class="col-sm-2 control-label" value="<?php echo $b->jenis_barang; ?>">Jenis Barang</label>
 									<div class="col-sm-8">
-										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> DSLR</label>
+										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="DSLR"> DSLR</label>
                                         </div>
-										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> Action Camera</label>
+										<div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="Action Camera"> Action Camera</label>
                                         </div>
-                                        <div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="<?php echo $b->jenis_barang; ?>"> Other</label>
+                                        <div class="checkbox-inline1"><label><input type="checkbox" name="jenis_barang[]" value="Other  "> Other</label>
                                         </div>
 									</div>
 								</div>
