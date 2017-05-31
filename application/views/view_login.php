@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Dengan CodeIgniter</title>
+	<title>Login</title>
 </head>
 <body>
-	<h1>Membuat Login Dengan CodeIgniter </h1>
+	<h1>Login</h1>
 	<form action="<?php echo base_url('login/aksi_login'); ?>" method="post">		
 		<table>
 			<tr>

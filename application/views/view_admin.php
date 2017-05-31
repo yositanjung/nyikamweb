@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat login dengan codeigniter</title>
+	<title>Login</title>
 </head>
 <body>
 	<h1>Login berhasil !</h1>
