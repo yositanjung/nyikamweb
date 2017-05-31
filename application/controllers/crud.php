@@ -16,25 +16,44 @@ Class Crud extends CI_Controller {
     }
     
     public function do_insert(){
-        $jb = $_POST['jenis_barang'];
-        $jenis_barang = implode(', ', $jb);
-        $nama_barang = $_POST['nama_barang'];
-        $deskripsi_barang = $_POST['deskripsi_barang'];
-        $jumlah_barang = $_POST['jumlah_barang'];
-        $harga_sewa = $_POST['harga_sewa'];
-        $data_insert = array (
-            'jenis_barang' => $jenis_barang,
-            'nama_barang' => $nama_barang,
-            'deskripsi_barang' => $deskripsi_barang,
-            'jumlah_barang' => $jumlah_barang,
-            'harga_sewa' => $harga_sewa
-        );
-        $res = $this->daftarbarang_model->Insertdata('barang', $data_insert);
-        if ($res >= 1){
-            redirect('crud/index');//akan ditampilkan ke halaman daftar barang
-        }else{
-            echo "<h2>insert data gagal</h2>";
+        if(isset($_POST['btnSubmit'])){
+            $target_dir="./assets/images/";
+            $target_file=$target_dir . basename($_FILES["gambar"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+            //cek file extensi, jpg/png/jpeg
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
         }
+            if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        } else {
+            if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file)) {
+                $jb = $_POST['jenis_barang'];
+                $jenis_barang = implode(', ', $jb);
+                $nama_barang = $_POST['nama_barang'];
+                $deskripsi_barang = $_POST['deskripsi_barang'];
+                $jumlah_barang = $_POST['jumlah_barang'];
+                $gambar_barang = $_FILES['gambar'] ['name'];
+                $harga_sewa = $_POST['harga_sewa'];
+                $data_insert = array (
+                    'jenis_barang' => $jenis_barang,
+                    'nama_barang' => $nama_barang,
+                    'deskripsi_barang' => $deskripsi_barang,
+                    'jumlah_barang' => $jumlah_barang,
+                    'gambar_barang' => $gambar_barang,
+                    'harga_sewa' => $harga_sewa 
+                );
+                $res = $this->daftarbarang_model->Insertdata('barang', $data_insert);
+                if ($res >= 1){
+                    redirect('crud/index');//akan ditampilkan ke halaman daftar barang
+                }else{
+                    echo "<h2>insert data gagal</h2>";
+                }
+            }   
+        }
+        }   
     }
     
     public function do_delete($nama_barang){

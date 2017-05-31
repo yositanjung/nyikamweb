@@ -4,7 +4,7 @@
             <h3>Upload Barang Baru</h3>
             <div class="tab-content">
                 <div class="tab-pane active" id="horizontal-form">
-                    <form class="form-horizontal" method="POST" action="<?php echo base_url()."index.php/crud/do_insert" ?>"><!--data masuk ke controller uploadbarang-->
+                    <form class="form-horizontal" method="POST" action="<?php echo base_url()."index.php/crud/do_insert" ?>" enctype="multipart/form-data"><!--data masuk ke controller uploadbarang-->
                         <div class="form-group">
 									<label for="checkbox" class="col-sm-2 control-label">Jenis Barang</label>
 									<div class="col-sm-8">
@@ -42,16 +42,12 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Upload Barang</label>
-                            <input type="file" name="upload_barang">
+                            <input type= "file" name="gambar"/>
                         </div>
                         <div class="panel-footer">
                             <div class="row">
                                 <div class="col-sm-8 col-sm-offset-2">
-                                    <!--<button class="btn-success btn">Submit</button>
-                                    <button class="btn-default btn">Cancel</button>
-                                    <button class="btn-inverse btn">Reset</button>-->
                                     <input type="submit" name="btnSubmit" value="Submit">
-                                    <!--<input type="submit" name="btnCancel" value="Cancel">-->
                                 </div>
                             </div>
                         </div>

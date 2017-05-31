@@ -16,18 +16,34 @@
                     <th>Deskripsi</th>
                     <th>Jumlah</th>
                     <th>Harga Sewa</th>
+                    <th>Gambar Barang</th>
                     <th>Opsi</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($tampil as $d) { ?>
                     <tr>
-                    <td><?php echo $d->id_barang ?></td>
-                    <td><?php echo $d->jenis_barang ?></td>
-                    <td><?php echo $d->nama_barang ?></td>
-                    <td><?php echo $d->deskripsi_barang ?></td>
-                    <td><?php echo $d->jumlah_barang ?></td>
-                    <td><?php echo $d->harga_sewa ?></td>
+                    <td>
+                        <?php echo $d->id_barang ?>
+                    </td>
+                    <td>
+                        <?php echo $d->jenis_barang ?>
+                    </td>
+                    <td>
+                        <?php echo $d->nama_barang ?>
+                    </td>
+                    <td>
+                        <?php echo $d->deskripsi_barang ?>
+                    </td>
+                    <td>
+                        <?php echo $d->jumlah_barang ?>
+                    </td>
+                    <td>
+                        <?php echo $d->harga_sewa ?>
+                    </td>
+                    <td>
+                        <img width="100" height="100" src="<?php echo base_url()?>assets/images/<?php echo $d->gambar_barang?>">
+                    </td>
                     <td align="center">
                         <?php echo anchor ('crud/do_edit/' .$d->nama_barang, 'Edit'); ?> ||
                         <?php echo anchor ('crud/do_delete/' .$d->nama_barang, 'Delete'); ?>
