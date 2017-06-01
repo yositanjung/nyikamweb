@@ -29,7 +29,7 @@
 </head>
 <body>
 <div id="wrapper">
-     <!-- Navigation -->
+     <!-- Navigation-->
         <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,11 +38,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" >Nyileh Kamera</a>
+                <a class="navbar-brand" href="<//?php echo base_url().'home'?>">Nyileh Kamera</a>
             </div>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <li align="center">
+                            <a href="<?php echo base_url().'home'?>"><img src="assets/images/logo.png" width="204.78" height="115.5"></a>
+                        </li>
                         <li>
                             <a href="<?php echo base_url().'datakonsumen' ?>"><i class="fa fa-laptop nav_icon"></i>Data Konsumen</a>
                         </li>
@@ -56,6 +59,9 @@
                                     <a href="<?php echo base_url().'daftarbarang'?>">Daftar Barang</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('login/logout'); ?>">Logout</a><!--button logout akan di direct ke function logout di controller login-->
                         </li>
                     </ul>
                 </div>

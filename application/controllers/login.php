@@ -9,7 +9,7 @@ class Login extends CI_Controller{
 	}
  
 	function index(){
-		$this->load->view('view_login');//load tampilan 
+		$this->load->view('login_view');//load tampilan 
 	}
  
 	function aksi_login(){//menangkap data uname & pass
@@ -31,7 +31,7 @@ class Login extends CI_Controller{
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("admin"));//dialihkan ke controller admin
+			redirect(base_url("home"));//dialihkan ke controller admin
  
 		}else{
 			echo "Username dan password salah !";

@@ -6,7 +6,7 @@ Class Crud extends CI_Controller {
         $this->load->database();//panggil db
         $this->load->helper('url');//panggil base_url
         $this->load->view("templateheader.php");
-        $tampil = $this->daftarbarang_model->Getbarang();
+        $tampil = $this->barang_model->Getbarang();
         $this->load->view('daftarbarang', ['tampil'=>$tampil]);
         $this->load->view("templatefooter.php");
         }
@@ -45,7 +45,7 @@ Class Crud extends CI_Controller {
                     'gambar_barang' => $gambar_barang,
                     'harga_sewa' => $harga_sewa 
                 );
-                $res = $this->daftarbarang_model->Insertdata('barang', $data_insert);
+                $res = $this->barang_model->Insertdata('barang', $data_insert);
                 if ($res >= 1){
                     redirect('crud/index');//akan ditampilkan ke halaman daftar barang
                 }else{
@@ -58,13 +58,13 @@ Class Crud extends CI_Controller {
     
     public function do_delete($nama_barang){
         $where = array('nama_barang' => $nama_barang);
-        $this->daftarbarang_model->deletedata($where, 'barang');
+        $this->barang_model->deletedata($where, 'barang');
         redirect('crud/index');
     }
     
     public function do_edit($nama_barang){
         $where = array ('nama_barang' => $nama_barang);
-        $data['barang'] = $this->daftarbarang_model->editdata($where, 'barang')->result();
+        $data['barang'] = $this->barang_model->editdata($where, 'barang')->result();
         $this->load->view("templateheader.php");
         $this->load->view('editbarang' ,$data);
         $this->load->view("templatefooter.php");
@@ -91,7 +91,7 @@ Class Crud extends CI_Controller {
             'id_barang' => $id
         );
         
-        $this->daftarbarang_model->updatedata($where, $data, 'barang');
+        $this->barang_model->updatedata($where, $data, 'barang');
         redirect('crud/index');
     }
 }

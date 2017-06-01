@@ -1,6 +1,6 @@
 <?php 
  
-class Admin extends CI_Controller{
+class Home extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();
@@ -11,6 +11,8 @@ class Admin extends CI_Controller{
 	}
  
 	function index(){
-		$this->load->view('view_admin');
+        $this->load->view('templateheader');
+		$this->load->view('home');
+        $this->load->view('templatefooter');
 	}
 }

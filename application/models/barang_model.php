@@ -1,6 +1,6 @@
 <?php
 
-Class Daftarbarang_model extends CI_Model {
+Class Barang_model extends CI_Model {
     public $id_barang;
     public $jenis_barang;
     public $nama_barang;
